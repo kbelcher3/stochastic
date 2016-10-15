@@ -36,7 +36,7 @@ This function uses memoization which has linear runtime!
 long int good_fib(long int n) {
   // Array is of size n+1 due to 0-indexing
   long *fibb = malloc((n+1) * sizeof *fibb);
-
+  
   // Base cases
   fibb[0] = 1;
   fibb[1] = 1;
