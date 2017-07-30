@@ -7,12 +7,12 @@
 int ber(double p) {
 	double u = drand48();
 	
-	if(u > p) {
+	if(u > p) 
 		return 0;
-	}
-	else {
+	
+	else 
 		return 1;
-	}
+	
 }
 
 
@@ -30,9 +30,9 @@ int main(int argc, char *argv[]) {
 	sscanf(argv[2], "%d", &n);
 
 	// Print out some variates
-	for(int i=0; i < n; i++) {
+	for(int i=0; i < n; i++) 
 		printf("%d", ber(p));
-	}
+	
 
 	return 0;
 }
