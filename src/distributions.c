@@ -3,9 +3,14 @@
 #include <math.h>
 #include "distributions.h"
 
+// Returns a U(0,1) rv
+double unif() {
+	return (double)rand() / (double)RAND_MAX;
+}
+
 // Generates a Ber(p) random  variate
 int ber(double p) {
-	double u = rand();
+	double u = unif();
 	
 	if(u > p) 
 		return 0;
@@ -18,6 +23,8 @@ int rademacher() {
 	int temp_ber = ber(0.5);
 	return (2*temp_ber)-1;
 }
+
+
 
 // Returns a discrete uniform distribution on {0, n}
 int disc_unif(int n) {
@@ -55,7 +62,7 @@ int geom(double p) {
 	// Use memoryless property to generate the rv
 	int stop_loop = 0;
 	while(stop_loop == 0) {
-		if(rand() > p)
+		if(unif() > p)
 			return_value++;
 		else
 			stop_loop = 1;
@@ -93,10 +100,6 @@ int borel(double mu) {
 	return 0;
 }
 
-// Returns a U(0,1) rv 
-double unif() {
-	return rand();
-}
 
 // Returns a U(a,b) rv
 double unif_ab(double a, double b) {
