@@ -33,13 +33,16 @@ int main(int argc, char *argv[]) {
   long int n = 33;
   long int *fib = good_fib(n);
 
+  for(int i=0; i<n; i++)
+    printf("\n%ld", *(fib+i));
+
   long int sum_of_evens = 0;
 
   printf("\n");
 
-  for(int i = 1; i <= n; i += 3) {
+  for(int i = 2; i <= n; i += 3)  
     sum_of_evens += fib[i];
-  }
+  
 
   printf("\nAnswer: %ld\n", sum_of_evens);
     
