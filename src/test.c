@@ -3,7 +3,6 @@
 #include <math.h>
 #include <time.h>
 #include "distributions.h"
-#include "distributions.c"
 
 
 int main(int argc, char **argv) {
@@ -11,7 +10,7 @@ int main(int argc, char **argv) {
 	srand(time(NULL));
 	
 	for(int i=0; i<20; i++)
-		printf("%d, ", rademacher());
+		printf("%0.4f\n", expo(1));
 
 	return 0;
 }

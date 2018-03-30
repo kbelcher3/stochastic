@@ -5,7 +5,7 @@
 
 // Returns a U(0,1) rv
 double unif() {
-	return (double)rand() / (double)RAND_MAX;
+	return (double)rand() / (double)(RAND_MAX+1.0);
 }
 
 // Generates a Ber(p) random  variate
